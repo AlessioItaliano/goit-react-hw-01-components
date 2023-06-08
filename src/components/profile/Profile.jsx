@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import {
   ProfileItem,
@@ -11,13 +11,13 @@ import {
   ListItem,
   Label,
   Quantity,
-} from './Profile.module';
+} from "./Profile.module";
 
 const Profile = ({
   username,
   tag,
   location,
-  avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
+  avatar = "https://cdn-icons-png.flaticon.com/512/1077/1077012.png",
   stats,
 }) => {
   return (
@@ -56,7 +56,7 @@ Profile.propTypes = {
     followers: PropTypes.number.isRequired,
     views: PropTypes.number.isRequired,
     likes: PropTypes.number.isRequired,
-  }),
+  }).isRequired,
 };
 
 export default Profile;

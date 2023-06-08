@@ -1,14 +1,14 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import './Statistics.css'
+import "./Statistics.css";
 
 const Statistics = ({ title, stats }) => {
   return (
     <section className="statistics">
-      {title !== '' && <h2 className="title">{title}</h2>}
+      {title && <h2 className="title">{title}</h2>}
 
       <ul className="stat-list">
-        {stats.map(stat => (
+        {stats.map((stat) => (
           <li
             className="item"
             key={stat.id}
@@ -24,8 +24,8 @@ const Statistics = ({ title, stats }) => {
 };
 
 function getRandomColor() {
-  let letters = '0123456789ABCDEF';
-  let color = '#';
+  let letters = "0123456789ABCDEF";
+  let color = "#";
   for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
@@ -39,7 +39,7 @@ Statistics.propTypes = {
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
-    })
+    }).isRequired
   ),
 };
 
